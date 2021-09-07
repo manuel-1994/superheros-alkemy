@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
-import { getHeroByName } from "../../selectors/getHeroByName";
+import { getApiHero } from "../../helpers/getApiHero";
 
 export const SearchHero = ({ setHeros }) => {
  
@@ -8,17 +8,19 @@ export const SearchHero = ({ setHeros }) => {
   const handleInputChange = (e) => {
     setinputValue(e.target.value);
   };
+
   const handleSearch = (e) => {
     e.preventDefault();
     if(inputValue==="") return setHeros(inputValue)
-    getHeroByName(inputValue).then(heros=> setHeros(heros))
+    getApiHero(inputValue).then(heros=> setHeros(heros))
   };
 
   return (
     <>
-      <h2>Buscar Heroe</h2>
+      <h2 className=" text-center text-sm-start">Buscar Heroe</h2>
       <form onSubmit={handleSearch}>
         <input
+          className="ms-2"
           type="text"
           name='inputValue'
           value={inputValue}

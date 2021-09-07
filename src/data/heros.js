@@ -1,1 +1,1 @@
-export const heros = ['batman', 'superman']
+export const heros = []

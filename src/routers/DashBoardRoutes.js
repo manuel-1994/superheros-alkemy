@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect, Route, Switch } from 'react-router'
-import { HeroScreen } from '../components/heros/HerosScreen'
+import { HeroScreen } from '../components/heros/HeroScreen'
 import { SearchScreen } from '../components/search/SearchScreen'
 import { TeamScreen } from '../components/team/TeamScreen'
 import { Sidebar } from '../components/ui/Sidebar'
@@ -13,9 +13,9 @@ export const DashBoardRoutes = () => {
                 <Switch>
                     <Route exact path='/home' component= {TeamScreen}/>
                     <Route exact path='/search' component= {SearchScreen}/>
-                    <Route exact path='/hero/heroId:' component= {HeroScreen}/>
+                    <Route exact path='/hero/:heroId' component= {HeroScreen}/>
 
-                    <Redirect to='home'/>
+                    <Redirect to='/home'/>
                 </Switch>
             </div>
         </>
